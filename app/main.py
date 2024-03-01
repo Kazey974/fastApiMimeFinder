@@ -17,14 +17,12 @@ async def get_mime_type(request: Request):
     """
     Get mimetype of files passed through forms or curl
     """
-    response = dict()
-
     async with request.form() as form:
-        for file in form.multi_items():
-            if isinstance(file[1], UploadFile):
-                response[file[1].filename] = await analyze_content(file[1])
-
-    return response
+        return {
+            file[1].filename: await analyze_content(file[1])
+            for file in form.multi_items()
+            if isinstance(file[1], UploadFile)
+        }
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port="8080")
