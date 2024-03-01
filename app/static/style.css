@@ -1,0 +1,29 @@
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    font-size: 20px;
+}
+
+#container {
+    background-color: #07397b;
+    margin: auto;
+    border-width: 20px 4px 4px 4px;
+    border-style: solid;
+    border-color: #0c2747;
+    border-radius: 3px;
+    padding: 0.3rem;
+    min-width: 20rem;
+    max-width: 50%;
+}
+
+#container * {
+    display: block;
+    margin: 0.5rem;
+}
+
+input, input::file-selector-button {
+    font-family: monospace;
+    border-radius: 0;
+}

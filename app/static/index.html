@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Mime type finder</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                <b>MIME TYPE FINDER</b>
+            </div>
+            <div>
+                <form id="mimetype" target="_self" action="mime-type" method="post" enctype="multipart/form-data">
+                    <label for="files">File(s) :</label>
+                    <input type="file" id="upload" name="upload" multiple/>
+                    <input type="submit" value="Find type" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
