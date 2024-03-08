@@ -4,9 +4,10 @@ import magic
 
 async def analyze_content(file: UploadFile):
     content = await file.read()
-    file.close()
+    await file.close()
 
     temp = NamedTemporaryFile(delete=False)
     temp.write(content)
     temp.close()
+    
     return magic.from_file(temp.name, mime=True)
