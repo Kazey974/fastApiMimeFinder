@@ -19,7 +19,7 @@ async def get_mime_type(request: Request):
     """
     async with request.form() as form:
         return {
-            file[1].filename: await analyze_content(file[1])
+            file[0]: await analyze_content(file[1])
             for file in form.multi_items()
             if isinstance(file[1], UploadFile)
         }
